@@ -1,0 +1,22 @@
+* { margin: 0; padding: 0; }
+body { padding: 10px;}
+
+#menu { margin-bottom:15px;}
+#menu ul li { background-color:black; color:white; display:inline-block; padding:10 20px; border: 1px solid black; }
+#menu ul li:hover { background-color:white; color:black; }
+#menu ul li.active { background-color:white; color:black; }
+
+#bemvindo #image { }
+#bemvindo #text { margin-left:20px;}
+.left { float:left; }
+.right { float:right; }
+
+#configure_hashtag {
+    text-align: center;
+    font-size:55px;
+    font-weight: bold;
+}
+#configure_hashtag input[type=text] {
+    padding:5px; font-size:35px;border: 1px solid lightgray;
+}
+#configure_hashtag #desc { font-size:12px; margin-top:9px;}
