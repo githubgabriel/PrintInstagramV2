@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; }
+
+body { padding-top:65px; padding-bottom:45px; }
+
+#menu { margin-bottom:15px;}
+#menu ul li { background-color:black; color:white; display:inline-block; padding:10 20px; border: 1px solid black; }
+#menu ul li:hover { background-color:white; color:black; }
+#menu ul li.active { background-color:white; color:black; }
+
+
+#configure_hashtag {
+    margin-top:30px;
+    text-align: center;
+    font-size:55px;
+    font-weight: bold;
+}
+#configure_hashtag input[type=text] {
+    padding:5px; font-size:35px;border: 1px solid lightgray;
+}
+#configure_hashtag #desc { font-size:15px; margin-top:9px;}
+
+#imagem_box { margin-top:20px;}
+#imagem_box li { margin-bottom:20px;}
+#imagem_box input#check {position: absolute;top:3px;left:22px; }
+
+#rodape { background-color:#222222; position: fixed; bottom:0px; width: 100%; padding: 5px;}
+#rodape .container { text-align:center; color:white; font-size:14px;}
