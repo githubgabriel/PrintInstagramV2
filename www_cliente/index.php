@@ -8,7 +8,11 @@
 
 
     use base\instagramv2\instagramv2;
+    use base\instagramv2\webservice;
 
+    $instagramv2 = new instagramv2();
+
+    $webservice = new webservice();
 
 ?>
 <html>
@@ -40,7 +44,7 @@
        */
 
 
-            $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+            $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ:ZZZZ', {
                 translation: {
                     'Z': {
                         pattern: /[0-9]/, optional: true
@@ -96,7 +100,22 @@
 
         </div>
 
+        <?php
 
+
+            echo $webservice->checkWebService($_SESSION["SERVER_MASTER"]);
+
+        ?>
+
+        <div class="clear"> </div>
+        <br>
+
+        <div class="col-sm-2">
+            <button type="button" id="initServer" class="btn btn-default" onclick="initServer()">Iniciar Cliente Server</button>
+        </div>
+        <div class="col-sm-2">
+            <div id="loading_initServer" style="display:none;position:relative;top:5px;"> <img src="images/icon-refresh.gif" /> Atualizando.. </div>
+        </div>
 
 
         <div class="col-md-12" style="margin-top:30px;">
@@ -105,15 +124,12 @@
             echo "<pre>".shell_exec("lpstat -d 2>&1")."</pre>";
             ?>
         </div>
-
-
-
-
-
     </div>
 
+     <? require "require/rodape.php"; ?>
 
-         <? require "require/rodape.php"; ?>
-
+    <? if($_SESSION["cliente_server_status"] == "1") { ?>
+        <script>initServer();</script>
+    <? } ?>
 </body>
 </html>

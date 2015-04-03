@@ -20,7 +20,7 @@ define("AUTOLOAD_DIR_CLASS", "class");
 /**
  *  Conexão com Banco de Dados
  */
-if(HOST_ROOT == "localhost:8888" or HOST_ROOT == "localhost") {
+if(HOST_ROOT == "localhost:8888" or HOST_ROOT == "localhost" or HOST_ROOT == "127.0.0.1" or HOST_ROOT == "127.0.0.1:8888") {
     define("DATABASE_HOST","localhost");
     define("DATABASE_LOGIN","root");
     define("DATABASE_PASS","root1313");

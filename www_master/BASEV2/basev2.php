@@ -24,12 +24,11 @@ if($_SESSION["instagramv2_senha"] != "senha1313") {
 /*
     Funcoes Essenciais
 */
-include "funcoes_essenciais.php";
-
+require "funcoes_essenciais.php";
 /*
     Carrega Configurações Define
 */
-include "config.inc.php";
+require "config.inc.php";
 
 /**
  *  Cria Conexao PDO para acessar Banco de Dados

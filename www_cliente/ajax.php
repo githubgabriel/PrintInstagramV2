@@ -4,6 +4,12 @@ require "BASEV2/basev2.php";
 
 getBaseV2("php");
 
+use base\instagramv2\instagramv2;
+use base\instagramv2\webservice;
+
+$instagramv2 = new instagramv2();
+$webservice = new webservice();
+
 /**
  * Created by PhpStorm.
  * User: linda
@@ -11,36 +17,33 @@ getBaseV2("php");
  * Time: 14:56
  */
 
-if($_GET["acao"] == "updateConfigTerminal") {
+$a = $_GET["acao"];
+
+if($a == "updateConfigTerminal") {
 
     $_SESSION["IMPRESSORA_NOME"] = $_GET["nome_impressora"];
     $_SESSION["SERVER_MASTER"] = $_GET["ip_server_master"];
-
     echo "1";
 
 }
-else if($_GET["acao"] == "updateRodape") {
-
-    $text = null;
-    if($_SESSION["IMPRESSORA_NOME"]) {
-        $text .="IMPRESSORA NOME: <b>" . $_SESSION["IMPRESSORA_NOME"] . "</b><br/>";
-    }
-    $text .= "MEU IP: ".getIPByHost("gabrielbarbosa.local");
-    $text .= "<br>";
-    if($_SESSION["SERVER_MASTER"]) {
+else if($a == "updateRodape") {
 
 
-        if(ping($_SESSION["SERVER_MASTER"])) {
-            $color = "greenyellow";
-            $ping_msg = "connectado!";
-        } else {
-            $color = "red";
-            $ping_msg = "Fail!";
-        }
+    $instagramv2->cliente_ShowRodape();
 
-        $text .= "CONNECTADO SERVER IP: <b style='color:".$color."'>" . $_SESSION["SERVER_MASTER"]." - $ping_msg</b>";
-    } else {
-        $text .= "Sem conexão com servidor master";
-    }
-    echo $text;
+
+} else if($a == "impressoraUpdateStatus"){
+
+
+    echo $webservice->impressoraUpdateStatus();
+
+} else if($a == "setClienteServerStatus"){
+
+    $_SESSION["cliente_server_status"] = $_GET["valor"];
+    echo "1";
+
+} else if($a == "checkWebService") {
+
+    echo $webservice->checkWebService();
+
 }

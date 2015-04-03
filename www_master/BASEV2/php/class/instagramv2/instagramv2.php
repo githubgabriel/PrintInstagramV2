@@ -2,19 +2,46 @@
 
 namespace base\instagramv2;
 
+use base\mysqltools\mysqltools;
+
 class instagramv2 {
 
-    var $table_imagens = "imagens";
+    var $table_listen = "hashtag_listen";
+    var $table_imagens = "hashtag_imagens";
+    var $table_impressoras = "hashtag_impressoras_online";
+    var $table_impressoras_req = "hashtag_impressoras_pedido";
 
-    var $client_id = null;
-    var $secret_id = null;
-    var $hashtag = null;
-    var $count = 20;
+    var $mysqltools = null;
 
-    function __construct($cId,$sId) {
-        $this->client_id = $cId;
-        $this->secret_id = $sId;
+    public function __construct() {
+        $this->mysqltools = new mysqltools();
     }
+
+    public function cliente_ImpressoraUpdate($nome) {
+        $time = time();
+        $this->mysqltools->clear();
+        $this->mysqltools->setTabela($this->table_impressoras);
+        $this->mysqltools->setWhere("impressora_nome = '$nome'");
+        $this->mysqltools->setSet("time = '$time'");
+        return $this->mysqltools->updateSQL();
+    }
+    public function cliente_ImpressoraInsert($nome) {
+        $time = time();
+        $this->mysqltools->clear();
+        $this->mysqltools->setTabela($this->table_impressoras);
+        $this->mysqltools->setPreValues("(impressora_nome, time)");
+        $this->mysqltools->setValues("('$nome','$time')");
+        return $this->mysqltools->insertSQL();
+    }
+    public function cliente_checkImpressoraExists($nome) {
+
+        $this->mysqltools->clear();
+        $this->mysqltools->setTabela($this->table_impressoras);
+        $this->mysqltools->setWhere("impressora_nome = '$nome'");
+        return $this->mysqltools->selectSQL();
+
+    }
+
     public function get_client_id() {
         return $this->client_id;
     }
@@ -33,6 +60,8 @@ class instagramv2 {
     public function get_count() {
         return $this->count;
     }
+
+
 
 
 

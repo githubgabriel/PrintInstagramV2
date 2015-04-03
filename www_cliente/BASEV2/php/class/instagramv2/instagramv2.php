@@ -2,6 +2,8 @@
 
 namespace base\instagramv2;
 
+use base\instagramv2\webservice;
+
 class instagramv2 {
 
     var $table_imagens = "imagens";
@@ -10,6 +12,34 @@ class instagramv2 {
     var $secret_id = null;
     var $hashtag = null;
     var $count = 20;
+
+
+    public function cliente_ShowRodape() {
+        $webservice = new webservice();
+        $txt = null;
+        if($_SESSION["IMPRESSORA_NOME"]) {
+            $txt .= "IMPRESSORA NOME: <b>" . $_SESSION["IMPRESSORA_NOME"] . "</b><br/>";
+        }
+        $txt .= "MEU IP: ".getIPByHost("gabrielbarbosa.local");
+        $txt .= "<br>";
+        if($_SESSION["SERVER_MASTER"]) {
+
+            if($webservice->checkWebService()) {
+                $color = "greenyellow";
+                $ping_msg = "connectado!";
+            } else {
+                $color = "red";
+                $ping_msg = "Fail!";
+            }
+
+            $txt .= "CONNECTADO SERVER IP: <b style='color:".$color."'>" . $_SESSION["SERVER_MASTER"]." - $ping_msg</b>";
+
+        } else {
+            $txt .= "Sem conexão com servidor master";
+        }
+        echo $txt;
+    }
+
 
     function __construct($cId,$sId) {
         $this->client_id = $cId;
