@@ -6,9 +6,9 @@ getBaseV2("php");
 
 getBaseV2("javascript");
 
-
 use base\instagramv2\instagramv2;
 
+$instagramv2 = new instagramv2();
 
 ?>
 <html>
@@ -24,11 +24,36 @@ use base\instagramv2\instagramv2;
 
     <? getPluginJS("BootStrap"); ?>
 
+    <? getPluginJS("ToastMessage"); ?>
 
     <? getPluginJS("Chosen"); ?>
 
     <? include_JS("js/site.js"); ?>
 
+
+    <?
+        $hashtag = $_GET["hashtag"];
+
+        /* alimenta options ... */
+
+        $sql = $instagramv2->hashtag_selectListens();
+        $re = $conexao->query($sql);
+        if($re->rowCount()) {
+
+            $option = "";
+            while($row = $re->fetchObject()) {
+
+                /* seta paremetro get com id encontrada */
+                if($row->hashtag == $hashtag) { $hashtag = $row->id; }
+
+                $option .= '<option value="'.$row->id.'"> '.$row->hashtag.' </option>';
+
+            }
+
+        }
+
+
+    ?>
 
 
 </head>
@@ -46,15 +71,22 @@ use base\instagramv2\instagramv2;
             <div class="form-group">
                 <label for="exampleInputEmail1">Selecione #Hashtag</label>
                 <select name="select_hash" class="form-control">
-                    <option>#Dilma</option>
-                    <option>#Cocacola</option>
+                  <?=$option?>
+                    <option value=""> Todas imagens.. </option>
                 </select>
+
+                <script>
+                    <? if($hashtag) { ?>
+                        $("select[name=select_hash]").val("<?=$hashtag?>");
+                    <? } ?>
+                </script>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <button type="submit" style="margin-top:20px;" class="btn btn-default">Enviar</button>
+        <div class="col-md-4">
+            <button type="submit" style="margin-top:20px;" onclick="return hashtag_getImasges()" class="btn btn-default">Selecionar</button>
         </div>
+
     </div>
 </form>
 
@@ -66,98 +98,29 @@ use base\instagramv2\instagramv2;
         Ação <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Bloquear Imagem </a></li>
-        <li><a href="#">Pausar Impressão</a></li>
+        <li onclick="return bloquearImagens_selecionadas()"><a href="#">Bloquear Imagens </a></li>
+        <li onclick="return desbloquearImagens_selecionadas()"><a href="#">Desbloquear Imagens </a></li>
+        <li onclick="return deletarImagens_selecionadas()"><a href="#">Deletar Imagens </a></li>
         <li class="divider"></li>
-        <li><a href="#">Remover Impressão</a></li>
+        <li onclick="return checkAllImages();"><a href="#">Selecionar Todos</a></li>
     </ul>
 </div>
 
 
 <ul class="row" id="imagem_box">
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="position:relative;">
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-174908-rocking-the-night-away-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
 
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-287182-blah-blah-blah-yellow-road-sign-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
 
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-460760-colors-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="position:relative;">
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-174908-rocking-the-night-away-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-287182-blah-blah-blah-yellow-road-sign-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-460760-colors-xs.jpg">
-        </a>
-    </li><li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="position:relative;">
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-174908-rocking-the-night-away-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-287182-blah-blah-blah-yellow-road-sign-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-460760-colors-xs.jpg">
-        </a>
-    </li><li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="position:relative;">
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-174908-rocking-the-night-away-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-287182-blah-blah-blah-yellow-road-sign-xs.jpg">
-        </a>
-    </li>
-    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-
-        <input type="checkbox" id="check" name="check[]" value="1" />
-        <a href="#" class="thumbnail">
-            <img class="img-responsive" src="http://demo.fearlessflyer.com/html/demo/bootstrap-photo-gallery/images/photodune-460760-colors-xs.jpg">
-        </a>
-    </li>
 </ul>
 
     </div>
 
 <script> $("select").chosen(); </script>
+
+<script>
+
+        hashtag_getImasges();
+
+</script>
 
 <? require "require/rodape.php"; ?>
 </body>

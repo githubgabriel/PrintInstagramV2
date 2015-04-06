@@ -20,8 +20,34 @@ body { padding-top:65px; padding-bottom:45px; }
 #configure_hashtag #desc { font-size:15px; margin-top:9px;}
 
 #imagem_box { margin-top:20px;}
-#imagem_box li { margin-bottom:20px;}
+#imagem_box li { margin-bottom:20px; position:relative; }
+#imagem_box li:hover .image_obs { display:block; }
 #imagem_box input#check {position: absolute;top:3px;left:22px; }
+.image_checked { border: 1px solid red !important }
+.image_blocked {  text-align: center;
+    background-color: black;
+    font-size: 22px;
+    position: absolute;
+    top: 68px;
+    left: 16px;
+    color: red;
+    opacity: 0.6;
+    width: 163px; }
+.image_obs {  display:none;
+    word-break: break-all;
+    overflow:auto;
+    height:40px;
+    text-align: left;
+    background-color: black;
+    font-size: 11px;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 21px;
+    left: 16px;
+    color: white;
+    opacity: 0.8;
+    width: 163px; }
+.image_obs span { opacity: 1 !important; margin: 5px; display:block; }
 
 #rodape { background-color:#222222; position: fixed; bottom:0px; width: 100%; padding: 5px;}
 #rodape .container { text-align:center; color:white; font-size:14px;}

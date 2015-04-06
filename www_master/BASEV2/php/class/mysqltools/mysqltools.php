@@ -96,6 +96,10 @@ class mysqltools {
         $tmp = "insert into {$this->getTabela()} {$this->preValues()} values {$this->values()} ";
         return $tmp;
     }
+    public function deleteSQL() {
+        $tmp = "delete from {$this->getTabela()} {$this->where()} ";
+        return $tmp;
+    }
 
     public function getRowByID($table,$identificador,$id) {
         $this->clear();

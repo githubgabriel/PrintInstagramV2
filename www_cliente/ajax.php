@@ -19,30 +19,29 @@ $webservice = new webservice();
 
 $a = $_GET["acao"];
 
-if($a == "updateConfigTerminal") {
+if ($a == "updateConfigTerminal") {
 
     $_SESSION["IMPRESSORA_NOME"] = $_GET["nome_impressora"];
     $_SESSION["SERVER_MASTER"] = $_GET["ip_server_master"];
     echo "1";
 
-}
-else if($a == "updateRodape") {
+} else if ($a == "updateRodape") {
 
 
     $instagramv2->cliente_ShowRodape();
 
 
-} else if($a == "impressoraUpdateStatus"){
+} else if ($a == "impressoraUpdateStatus") {
 
 
     echo $webservice->impressoraUpdateStatus();
 
-} else if($a == "setClienteServerStatus"){
+} else if ($a == "setClienteServerStatus") {
 
     $_SESSION["cliente_server_status"] = $_GET["valor"];
     echo "1";
 
-} else if($a == "checkWebService") {
+} else if ($a == "checkWebService") {
 
     echo $webservice->checkWebService();
 

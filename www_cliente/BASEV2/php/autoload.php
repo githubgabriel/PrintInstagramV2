@@ -1,6 +1,7 @@
 <?php
 namespace base;
-function load($namespace) {
+function load($namespace)
+{
     $splitpath = explode('\\', $namespace);
     $path = '';
     $name = '';
@@ -19,15 +20,17 @@ function load($namespace) {
         }
     }
     if (!$firstword) {
-        $fullpath = __DIR__ ."/".AUTOLOAD_DIR_CLASS.$path . DIRECTORY_SEPARATOR . $name . '.php';
+        $fullpath = __DIR__ . "/" . AUTOLOAD_DIR_CLASS . $path . DIRECTORY_SEPARATOR . $name . '.php';
         //die($fullpath);
         return include_once($fullpath);
     }
     return false;
 }
 
-function loadPath($absPath) {
+function loadPath($absPath)
+{
     return include_once($absPath);
 }
+
 spl_autoload_register(__NAMESPACE__ . '\load');
 ?>

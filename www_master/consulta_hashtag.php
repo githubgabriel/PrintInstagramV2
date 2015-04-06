@@ -1,11 +1,21 @@
 <?php
 
-    require "BASEV2/basev2.php";
+require "BASEV2/basev2.php";
 
-    getBaseV2("php");
+getBaseV2("php");
 
-    getBaseV2("javascript");
+getBaseV2("javascript");
 
+
+use base\instagramv2\instagramv2;
+
+$instagramv2 = new instagramv2();
+
+if ($_GET["hashtag"]) {
+
+    $_SESSION["hashtag"] = $_GET["hashtag"];
+
+}
 
 ?>
 <html>
@@ -13,7 +23,7 @@
     <meta charset="UTF-8">
     <title>InstagramV2</title>
 
-    <link rel="stylesheet" href="css/site.css" type="text/css" />
+    <link rel="stylesheet" href="css/site.css" type="text/css"/>
 
     <? getPluginJS("Jquery"); ?>
 
@@ -26,71 +36,97 @@
 </head>
 <body>
 
-    <? $mi = "consulta_hashtag"; require("require/menu.php");?>
+<? $mi = "consulta_hashtag";
+require("require/menu.php"); ?>
 
 
 
 <div id="configure_hashtag">
 
-    <span style="position:relative;top:6px;left:-4px;">#</span><input type="text" name="set_hashtag" value="<?=$_SESSION["hashtag"]?>" />
-    <div id="desc">  </div>
-    <div id="desc2">  </div>
+    <span style="position:relative;top:6px;left:-4px;">#</span><input type="text" name="set_hashtag"
+                                                                      value="<?= $_SESSION["hashtag"] ?>"/>
+
+    <div id="desc"></div>
+    <div id="desc2"></div>
 
 </div>
 
 
-    <div id="preview_images" style="text-align:center;">
+<div id="preview_images" style="text-align:center;">
 
 
-    </div>
+</div>
 
 
-    <script>$(function() {
+<script>$(function () {
 
-            $("input[name=set_hashtag]").change(function() {
-                var hashtag = $("input[name=set_hashtag]").val();
-                $.ajax({
-                    type: 'GET',
-                    url: 'webservice/instagram/getJsonCount.php',
-                    data: {
-                        hashtag: hashtag,
-                        tipo: 2
-                    },beforeSend: function() {
+        $("input[name=set_hashtag]").change(function () {
 
-                        $("#configure_hashtag #desc").html("Verificando quantidade de registros...");
-                        $("#configure_hashtag #desc").css("color","gray");
-
-                    },success: function(data) {
-                        $("#configure_hashtag #desc").html("Total Registros: "+data);
-                        $("#configure_hashtag #desc").css("color","green");
-                    }
-                });
+            var hashtag = $("input[name=set_hashtag]").val();
 
 
-                $.ajax({
-                    type: 'GET',
-                    url: 'webservice/instagram/getJsonImages.php',
-                    data: {
-                        hashtag: hashtag,
-                        tipo: 2
-                    },beforeSend: function() {
+            getJsonCount(hashtag);
 
-                        $("#configure_hashtag #desc2").html("Carregando Images...");
-                        $("#configure_hashtag #desc2").css("color","gray");
-
-                    },success: function(data) {
-                        $("#configure_hashtag #desc2").html("...");
-
-                        $("#preview_images").html(data);
-                    }
-                });
+            getJsonImages(hashtag);
 
 
-            });
+        });
 
-        });</script>
+    });
+
+    function getJsonCount(hashtag) {
+        $.ajax({
+            type: 'GET',
+            url: 'webservice/instagram/getJsonCount.php',
+            data: {
+                hashtag: hashtag,
+                tipo: 2
+            }, beforeSend: function () {
+
+                $("#configure_hashtag #desc").html("Verificando quantidade de registros...");
+                $("#configure_hashtag #desc").css("color", "gray");
+
+            }, success: function (data) {
+                $("#configure_hashtag #desc").html("Total Registros: " + data);
+                $("#configure_hashtag #desc").css("color", "green");
+            }
+        });
+
+    }
+
+    function getJsonImages(hashtag) {
+        $.ajax({
+            type: 'GET',
+            url: 'webservice/instagram/getJsonImages.php',
+            data: {
+                hashtag: hashtag,
+                tipo: 2
+            }, beforeSend: function () {
+
+                $("#configure_hashtag #desc2").html("Carregando Images...");
+                $("#configure_hashtag #desc2").css("color", "gray");
+
+            }, success: function (data) {
+                $("#configure_hashtag #desc2").html("...");
+
+                $("#preview_images").html(data);
+            }
+        });
+    }
 
 
-    <? require "require/rodape.php"; ?>
+</script>
+
+
+<? if ($_GET["hashtag"]) {
+    ?>
+    <script>
+        getJsonCount('<?=$_GET["hashtag"]?>');
+
+        getJsonImages('<?=$_GET["hashtag"]?>');
+    </script>
+<? } ?>
+
+<? require "require/rodape.php"; ?>
 </body>
 </html>

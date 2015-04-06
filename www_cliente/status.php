@@ -16,7 +16,7 @@ use base\instagramv2\instagramv2;
     <meta charset="UTF-8">
     <title>InstagramV2</title>
 
-    <link rel="stylesheet" href="css/site.css" type="text/css" />
+    <link rel="stylesheet" href="css/site.css" type="text/css"/>
 
     <? getPluginJS("Jquery"); ?>
 
@@ -25,11 +25,11 @@ use base\instagramv2\instagramv2;
     <? include_JS("js/site.js"); ?>
 
 
-
 </head>
 <body>
 
-<? $mi = "status"; require("require/menu.php");?>
+<? $mi = "status";
+require("require/menu.php"); ?>
 
 
 <div class="container">
@@ -38,7 +38,7 @@ use base\instagramv2\instagramv2;
     <div class="col-md-12" style="margin-top:30px;">
         <b>Printer destination (lpstat -d): </b>
         <?
-        echo "<pre>".shell_exec("lpstat -d 2>&1")."</pre>";
+        echo "<pre>" . shell_exec("lpstat -d 2>&1") . "</pre>";
         ?>
     </div>
 
@@ -46,12 +46,12 @@ use base\instagramv2\instagramv2;
     <div class="col-md-12" style="margin-top:30px;">
         <b>Printer destination (lpstat -a): </b>
         <?
-        echo "<pre>".shell_exec("lpstat -a 2>&1")."</pre>";
+        echo "<pre>" . shell_exec("lpstat -a 2>&1") . "</pre>";
         ?>
     </div>
 
 
-    </div>
+</div>
 
 <? require "require/rodape.php"; ?>
 </body>

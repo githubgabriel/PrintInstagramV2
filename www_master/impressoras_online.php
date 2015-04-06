@@ -9,6 +9,7 @@ getBaseV2("javascript");
 
 use base\instagramv2\instagramv2;
 
+$instagramv2 = new instagramv2();
 
 ?>
 <html>
@@ -33,28 +34,43 @@ use base\instagramv2\instagramv2;
 
 <div class="container">
 
+
+
 <table class="table">
     <thead>
     <tr>
         <th width="60">Id</th>
         <th>Impressora Nome</th>
+        <th> Time</th>
         <th> Status</th>
     </tr>
     </thead>
     <tbody>
-    <tr class="success">
-        <th scope="row">1</th>
-        <td>Printer01</td>
-        <td align="center">  <b style="color:green;">Ativo</b> </td>
 
+    <?
+
+    $sql = $instagramv2->cliente_selectImpressoras();
+    $re = $conexao->query($sql);
+
+    if(!$re->rowCount()) {
+    ?>  <tr class="success">
+            <td align="center" colspan="4">  <b style="color:green;">Nenhuma impressora online.</b> </td>
+        </tr> <?
+    }
+
+    while($row = $re->fetchObject()) {
+
+    ?>
+
+    <tr class="success">
+        <th scope="row"><?=$row->id;?></th>
+        <td><?=$row->impressora_nome;?></td>
+        <td><?=$row->time;?></td>
+        <td align="center">  <b style="color:green;">Ativo</b> </td>
     </tr>
 
-    <tr class="success">
-        <th scope="row">2</th>
-        <td>Printer02</td>
-        <td align="center">  <b style="color:green;">Ativo</b> </td>
+    <? } ?>
 
-    </tr>
 
 
     </tbody>

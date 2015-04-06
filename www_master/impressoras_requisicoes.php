@@ -9,6 +9,7 @@ getBaseV2("javascript");
 
 use base\instagramv2\instagramv2;
 
+$instagramv2 = new instagramv2();
 
 ?>
 <html>

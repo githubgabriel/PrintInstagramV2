@@ -2,7 +2,8 @@
 
 namespace base\instagramv2;
 
-class instagramApi {
+class instagramApi
+{
 
     var $client_id = null;
     var $secret_id = null;
@@ -10,7 +11,8 @@ class instagramApi {
     var $count = 20;
 
 
-    function __construct($cId,$sId) {
+    function __construct($cId, $sId)
+    {
         $this->setClientId($cId);
         $this->setSecretId($sId);
     }
@@ -29,11 +31,14 @@ class instagramApi {
         return $result;
     }
 
-    public function getJsonImagens($url = "") {
-        if($this->getHashtag()) {
-            if($url == "") {
-                $url_count = 'https://api.instagram.com/v1/tags/'.$this->getHashtag().'/media/recent?client_id='.$this->getClientId().'&count='.$this->getCount();
-            } else { $url_count = $url; }
+    public function getJsonImagens($url = "")
+    {
+        if ($this->getHashtag()) {
+            if ($url == "") {
+                $url_count = 'https://api.instagram.com/v1/tags/' . $this->getHashtag() . '/media/recent?client_id=' . $this->getClientId() . '&count=' . $this->getCount();
+            } else {
+                $url_count = $url;
+            }
             $inst_stream = $this->callInstagram($url_count);
             $results = $inst_stream;
             // $results = json_decode($inst_stream, true);
@@ -43,9 +48,10 @@ class instagramApi {
         }
     }
 
-    public function getJsonCount() {
-        if($this->getHashtag()) {
-            $url_count = 'https://api.instagram.com/v1/tags/'.$this->getHashtag().'/?client_id='.$this->getClientId().'';
+    public function getJsonCount()
+    {
+        if ($this->getHashtag()) {
+            $url_count = 'https://api.instagram.com/v1/tags/' . $this->getHashtag() . '/?client_id=' . $this->getClientId() . '';
             $inst_stream = $this->callInstagram($url_count);
             $results = $inst_stream;
             //$results = json_decode($inst_stream, true);
@@ -55,18 +61,20 @@ class instagramApi {
         }
     }
 
-    public function decodeCountJson($results) {
+    public function decodeCountJson($results)
+    {
         $results = json_decode($results, true);
         $saida = null;
         echo $results["data"]["media_count"];
     }
 
-    public function decodeImagesJson($results) {
+    public function decodeImagesJson($results)
+    {
         $results = json_decode($results, true);
         $saida = null;
-        foreach($results['data'] as $item){
+        foreach ($results['data'] as $item) {
             $image_link = $item['images']['low_resolution']["url"];
-            $saida .= '<img src="'.$image_link.'" height="190" />';
+            $saida .= '<img src="' . $image_link . '" height="190" />';
         }
         echo $saida;
     }

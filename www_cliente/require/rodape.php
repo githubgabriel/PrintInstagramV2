@@ -3,9 +3,9 @@
     <div class="container">
         <?php
 
-            $instagramv2->cliente_ShowRodape();
+        $instagramv2->cliente_ShowRodape();
 
         ?>
     </div>
 
-    </div>
+</div>

@@ -12,6 +12,8 @@
         die();
     }
 
+    $_SESSION["hashtag"] = $_GET["hashtag"];
+
 
     $obj = new instagramApi(CLIENTE_ID,SECRET_ID);
 

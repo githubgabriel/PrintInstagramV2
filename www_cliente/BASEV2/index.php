@@ -4,7 +4,8 @@
  * "Jesus"
  */
 ?>
-<?php include "basev2.php"; getBaseV2("php"); ?>
+<?php include "basev2.php";
+getBaseV2("php"); ?>
 
 <!doctype html>
 <html lang="en">
@@ -17,9 +18,9 @@
 
 </head>
 <body>
-    <?
+<?
 
-    ?>
+?>
 
 </body>
 </html>

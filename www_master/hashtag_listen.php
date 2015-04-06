@@ -9,6 +9,8 @@ getBaseV2("javascript");
 
 use base\instagramv2\instagramv2;
 
+$instagramv2 = new instagramv2();
+
 
 ?>
 <html>
@@ -60,26 +62,48 @@ use base\instagramv2\instagramv2;
     </tr>
     </thead>
     <tbody>
-    <tr class="success">
-        <th> <input type="checkbox" id="check" name="check[]" value="1" /></th>
-        <th scope="row">1</th>
-        <td>#dilma</td>
-        <td>10/08/1993 10:32</td>
-        <td> -- </td>
-        <td align="center"> 127 </td>
-        <td align="center">  <b style="color:green;">Ligado</b> </td>
-    </tr>
 
-    <tr class="danger">
-        <th> <input type="checkbox" id="check" name="check[]" value="1" /></th>
 
-        <th scope="row">1</th>
-        <td>#cocacola</td>
-        <td>10/08/1993 10:32</td>
-        <td> 11/08/1993 22:32 </td>
-        <td align="center"> 127 </td>
-        <td align="center">  <b style="color:red;">OFF</b> </td>
-    </tr>
+    <?
+
+    $sql = $instagramv2->hashtag_selectListens("","datetime_fim asc");
+    $re = $conexao->query($sql);
+
+    if(!$re->rowCount()) {
+        ?>  <tr class="success">
+            <td align="center" colspan="7">  <b style="color:green;">Nenhuma HashTag registrada.</b> </td>
+        </tr> <?
+    }
+
+    while($row = $re->fetchObject()) {
+
+        /* pega quantidade de fotos obtidas ..*/
+        $sql = $instagramv2->hashtag_selectImagens($row->id);
+        $re2 = $conexao->query($sql);
+
+        if($row->status == "1") {
+            $row->status = "Ligado"; $color = "green"; $class = "success";
+        } else {
+            $row->status = "Desligado"; $color = "red"; $class = "danger";
+        }
+
+        if(!$row->datetime_fim) { $row->datetime_fim = " -- "; }
+
+        ?>
+
+        <tr class="<?=$class?>">
+            <th> <input type="checkbox" id="check" name="check[]" value="<?=$row->id;?>" /></th>
+            <th scope="row"><?=$row->id;?></th>
+            <td><a href="consulta_hashtag.php?hashtag=<?=$row->hashtag;?>">#<?=$row->hashtag;?></a></td>
+            <td><?=$row->datetime_inicio;?></td>
+            <td> <?=$row->datetime_fim;?> </td>
+            <td align="center"> <a href="hashtag_imagens.php?hashtag=<?=$row->hashtag;?>"><?=$re2->rowCount();?></a> </td>
+            <td align="center">  <b style="color:<?=$color?>;"><?=$row->status;?></b> </td>
+        </tr>
+
+
+    <? } ?>
+
 
     </tbody>
 

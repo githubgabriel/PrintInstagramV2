@@ -9,6 +9,15 @@
 
     use base\instagramv2\instagramv2;
 
+    $instagramv2 = new instagramv2();
+
+
+/* Verificando quantidade de Impressoras Online */
+$sql = $instagramv2->cliente_selectImpressoras();
+$re = $conexao->query($sql);
+$qtd_impressoras_online = $re->rowCount();
+
+
 
 ?>
 <html>
@@ -54,18 +63,18 @@
           <small>  Created by Gabriel A. Barbosa </small>
         </p>
 
-<div class="col-md-4" style="margin-top:30px;">
+<div class="col-md-6" style="margin-top:30px;">
         <ul class="list-group">
             <li class="list-group-item list-group-item-success">
-                <span class="badge">1</span>
+                <span class="badge"><?=$qtd_hashtag_listen;?></span>
                <b> Hashtags Ativo</b>
             </li>
             <li class="list-group-item">
-                <span class="badge">3</span>
+                <span class="badge"><?=$qtd_hashtag_listen_inativo;?></span>
                 Hashtags Inativo
             </li>
             <li class="list-group-item">
-                <span class="badge">932</span>
+                <span class="badge"><?=$qtd_imagens?></span>
                 Imagens Registradas (Total)
             </li>
         </ul>
@@ -73,11 +82,11 @@
 
         <ul class="list-group">
             <li class="list-group-item list-group-item-success">
-                <span class="badge">1</span>
+                <span class="badge"><?=$qtd_impressoras_online?></span>
                 <b>Impressoras Ativas</b>
             </li>
             <li class="list-group-item">
-                <span class="badge">15</span>
+                <span class="badge"><?=$qtd_impressoras_req?></span>
                 Impressoras Requisições
             </li>
         </ul>
@@ -86,7 +95,7 @@
 
 
 
-        <div class="col-md-4" style="margin-top:30px;">
+       <!-- <div class="col-md-6" style="margin-top:30px;">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-warning">
                     <span class="badge">ATIVO</span>
@@ -102,11 +111,17 @@
                 </li>
             </ul>
 
-        </div>
-        <div class="col-md-4" style="margin-top:30px;">
-        <?
-            echo "<pre>".shell_exec("ifconfig en1 2>&1")."</pre>";
-        ?>
+        </div> -->
+        <div class="col-md-6" style="margin-top:5px;">
+            <b style="margin-right:10px;">Crontab ativos: </b>
+
+            <button onclick="crontab_restart()" class="btn btn-info"> Restart </button>
+            <button onclick="crontab_start()" class="btn btn-success"> Start </button>
+            <button onclick="crontab_stop()" class="btn btn-danger"> Stop </button>
+            <button onclick="crontab_edit(this)" class="btn btn-warning"> Editar </button>
+            <?
+                echo "<pre style='margin-top:10px;' id='pre-crontab'>".$instagramv2->crontabStatus()."</pre>";
+            ?>
         </div>
 
     </div>
