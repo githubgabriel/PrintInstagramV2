@@ -63,9 +63,9 @@ else if ($a == "crontabSalvar") {
 
         ?>
 
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" onclick="return checkImage(this);event.cancelBubble=true;" style="position:relative;min-height:150px;">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" onclick="return checkImage(this);event.cancelBubble=true;" style="position:relative;">
             <input type="checkbox" id="check" name="check[]" value="<?=$row->id?>" />
-            <a href="#" class="thumbnail">
+            <a href="#" class="thumbnail" style="height:160px">
                 <img class="img-responsive" src="<?=$row->json_images_thumbnail?>">
             </a>
        <? if(!$row->visible) { ?>

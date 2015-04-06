@@ -10,7 +10,7 @@ use base\instagramv2\instagramv2;
 
 $instagramv2 = new instagramv2();
 
-$IMPRESSORA_TIMEOUT = 30; // 30
+$IMPRESSORA_TIMEOUT = 20; // 30
 
 $sql = $instagramv2->cliente_selectImpressoras();
 $re = $conexao->query($sql);
