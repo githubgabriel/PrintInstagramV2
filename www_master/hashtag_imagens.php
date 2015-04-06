@@ -32,8 +32,11 @@ $instagramv2 = new instagramv2();
 
 
     <?
-        $hashtag = $_GET["hashtag"];
-
+        if($_GET["hashtag"]) {
+            $hashtag = $_GET["hashtag"];
+        } else {
+            $hashtag = $_SESSION["images_hashtag"];
+        }
         /* alimenta options ... */
 
         $sql = $instagramv2->hashtag_selectListens();

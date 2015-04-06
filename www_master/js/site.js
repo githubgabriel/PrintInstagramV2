@@ -26,7 +26,9 @@ function checkImage(obj) {
             $(obj).children("input:checkbox").removeAttr('Checked');
             $(obj).children("a.thumbnail").removeClass("image_checked");
     }
+
     return false;
+
 }
 
 function bloquearImagens_selecionadas() {

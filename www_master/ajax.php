@@ -48,6 +48,8 @@ else if ($a == "crontabSalvar") {
 } else if($a == "hashtag_getImages") {
 
 
+    $_SESSION["images_hashtag"] = $_GET["hashtag_id"];
+
     $sql = $instagramv2->hashtag_selectImagens($_GET["hashtag_id"]);
     $re = $conexao->query($sql);
     if($re->rowCount()) {
@@ -61,7 +63,7 @@ else if ($a == "crontabSalvar") {
 
         ?>
 
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" onclick="return checkImage(this)" style="position:relative;min-height:150px;">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" onclick="return checkImage(this);event.cancelBubble=true;" style="position:relative;min-height:150px;">
             <input type="checkbox" id="check" name="check[]" value="<?=$row->id?>" />
             <a href="#" class="thumbnail">
                 <img class="img-responsive" src="<?=$row->json_images_thumbnail?>">
