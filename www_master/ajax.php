@@ -17,7 +17,7 @@ $instagramv2 = new instagramv2();
  * Time: 14:56
  */
 
-$a = $_GET["acao"];
+$a = $_REQUEST["acao"];
 
 if ($a == "crontabRestart") {
 
@@ -121,4 +121,113 @@ else if ($a == "crontabSalvar") {
     }
 
     echo "1";
+}
+else if($a == "ligarHashtag_selecionadas") {
+
+    $json = $_GET["json"];
+    $json_decode = json_decode($json, true);
+
+    for($i=0;$i<count($json_decode);$i++) {
+
+        $sql = $instagramv2->hashtag_update($json_decode[$i], "status = '1'");
+        $re = $conexao->query($sql);
+
+    }
+
+    echo "1";
+
+}
+else if($a == "desligarHashtag_selecionadas") {
+
+
+    $json = $_GET["json"];
+    $json_decode = json_decode($json, true);
+
+    for($i=0;$i<count($json_decode);$i++) {
+
+        $sql = $instagramv2->hashtag_update($json_decode[$i], "status = '0'");
+        $re = $conexao->query($sql);
+
+    }
+
+    echo "1";
+
+} else if($a == "deletarHashtag_selecionadas") {
+
+
+    $json = $_GET["json"];
+    $json_decode = json_decode($json, true);
+
+    for($i=0;$i<count($json_decode);$i++) {
+
+        $sql = $instagramv2->hashtag_delete($json_decode[$i]);
+        $re = $conexao->query($sql);
+
+    }
+
+    echo "1";
+
+} else if($a == "refreshHashtagListen") {
+
+
+    $sql = $instagramv2->hashtag_selectListens("","status desc");
+    $re = $conexao->query($sql);
+
+    if(!$re->rowCount()) {
+        ?>  <tr class="success">
+            <td align="center" colspan="7">  <b style="color:green;">Nenhuma HashTag registrada.</b> </td>
+        </tr> <?
+    }
+
+    while($row = $re->fetchObject()) {
+
+        /* pega quantidade de fotos obtidas ..*/
+        $sql = $instagramv2->hashtag_selectImagens($row->id);
+        $re2 = $conexao->query($sql);
+
+        if($row->status == "1") {
+            $row->status = "Ligado"; $color = "green"; $class = "success";
+        } else {
+            $row->status = "Desligado"; $color = "red"; $class = "danger";
+        }
+
+        if(!$row->datetime_fim) { $row->datetime_fim = " -- "; }
+
+        ?>
+
+        <tr class="<?=$class?>">
+            <th> <input type="checkbox" id="check" name="check[]" value="<?=$row->id;?>" /></th>
+            <th scope="row"><?=$row->id;?></th>
+            <td><a href="consulta_hashtag.php?hashtag=<?=$row->hashtag;?>">#<?=$row->hashtag;?></a></td>
+            <td align="center">
+                <button type="button" onclick="return modal_layoutImpressao(<?=$row->id;?>);" class="btn btn-info">Layout</button>
+</td>
+            <td><?=$row->datetime_inicio;?></td>
+            <td> <?=$row->datetime_fim;?> </td>
+            <td align="center"> <a href="hashtag_imagens.php?hashtag=<?=$row->hashtag;?>"><?=$re2->rowCount();?></a> </td>
+            <td align="center">  <b style="color:<?=$color?>;"><?=$row->status;?></b> </td>
+        </tr>
+
+
+    <?
+    }
+} else if($a == "modal_layoutImpressao") {
+
+    $id = $_REQUEST["hashtag_id"];
+    $sql = $instagramv2->hashtag_selectListens("id = '$id'","");
+
+    $re = $conexao->query($sql);
+    $html = $re->fetchObject();
+    echo $html->layout_impressao_html;
+
+} else if($a == "new_hashtagListen_salvar") {
+
+    $hashtag = $_REQUEST["hashtag"];
+
+    $sql = $instagramv2->hashtag_insert("(hashtag, datetime_inicio, status)", "('".$hashtag."', NOW(), 1)");
+
+    $re = $conexao->query($sql);
+
+    echo "1";
+
 }

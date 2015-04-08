@@ -51,3 +51,7 @@ body { padding-top:65px; padding-bottom:45px; }
 
 #rodape { background-color:#222222; position: fixed; bottom:0px; width: 100%; padding: 5px;}
 #rodape .container { text-align:center; color:white; font-size:14px;}
+
+
+#preView { display:none; }
+#preView #html { margin-top:20px; }

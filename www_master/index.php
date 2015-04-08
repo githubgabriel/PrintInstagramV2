@@ -67,7 +67,7 @@ $qtd_impressoras_online = $re->rowCount();
         <ul class="list-group">
             <li class="list-group-item list-group-item-success">
                 <span class="badge"><?=$qtd_hashtag_listen;?></span>
-               <b> Hashtags Ativo</b>
+                <a href="hashtag_listen.php">  <b> Hashtags Ativo</b> </a>
             </li>
             <li class="list-group-item">
                 <span class="badge"><?=$qtd_hashtag_listen_inativo;?></span>
@@ -75,7 +75,7 @@ $qtd_impressoras_online = $re->rowCount();
             </li>
             <li class="list-group-item">
                 <span class="badge"><?=$qtd_imagens?></span>
-                Imagens Registradas (Total)
+                <a href="hashtag_imagens.php">  Imagens Registradas (Total) </a>
             </li>
         </ul>
 
@@ -83,11 +83,11 @@ $qtd_impressoras_online = $re->rowCount();
         <ul class="list-group">
             <li class="list-group-item list-group-item-success">
                 <span class="badge"><?=$qtd_impressoras_online?></span>
-                <b>Impressoras Ativas</b>
+                <a href="impressoras_online.php"><b>Impressoras Ativas</b></a>
             </li>
             <li class="list-group-item">
                 <span class="badge"><?=$qtd_impressoras_req?></span>
-                Impressoras Requisições
+                <a href="impressoras_requisicoes.php">  Impressoras Requisições </a>
             </li>
         </ul>
 

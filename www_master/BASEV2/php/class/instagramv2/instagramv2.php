@@ -106,6 +106,15 @@ class instagramv2 {
 
     }
 
+    public function hashtag_delete($id) {
+
+        $this->mysqltools->clear();
+        $this->mysqltools->setTabela($this->table_hashtag_listen);
+        $this->mysqltools->setWhere("id = '".$id."'");
+        return $this->mysqltools->deleteSQL();
+
+    }
+
     public function hashtag_updateImage($id,$set) {
         $time = time();
         $this->mysqltools->clear();
@@ -114,6 +123,16 @@ class instagramv2 {
         $this->mysqltools->setSet($set);
         return $this->mysqltools->updateSQL();
     }
+
+
+    public function hashtag_update($id,$set) {
+        $this->mysqltools->clear();
+        $this->mysqltools->setTabela($this->table_hashtag_listen);
+        $this->mysqltools->setWhere("id = '$id'");
+        $this->mysqltools->setSet($set);
+        return $this->mysqltools->updateSQL();
+    }
+
 
     public function hashtag_selectImagens($hashtag = 0)
     {
@@ -148,6 +167,13 @@ class instagramv2 {
         $this->mysqltools->setTabela($this->table_hashtag_images);
         $this->mysqltools->setPreValues("(hashtag_id, hashtag, json_type, json_id, json_link, json_user_id, json_user_profile_picture, json_user_username, json_user_full_name, json_images_low_resolution, json_images_standard_resolution, json_images_thumbnail, json_caption_text, json_created_time, visible)");
         $this->mysqltools->setValues($item);
+        return $this->mysqltools->insertSQL();
+    }
+    public function hashtag_insert($preValues, $values) {
+        $this->mysqltools->clear();
+        $this->mysqltools->setTabela($this->table_hashtag_listen);
+        $this->mysqltools->setPreValues($preValues);
+        $this->mysqltools->setValues($values);
         return $this->mysqltools->insertSQL();
     }
 

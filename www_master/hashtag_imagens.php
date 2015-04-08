@@ -93,15 +93,30 @@ $instagramv2 = new instagramv2();
     </div>
 </form>
 
+<script src="js/check.js"> </script>
+    <script>
 
+        $(function() {
+            $("#btn_selecionarTodos").checkAllBox({ checkBoxDiv: "input[type=checkbox]", debug: true ,
 
+                eventChecked: function(obj) {
+                    $(obj).html('Cancelar Seleção');
+                    $("li").children("a.thumbnail").addClass("image_checked");
+                },
+                eventUnChecked: function(obj) {
+                    $(obj).html('Selecionar Todos');
+                    $("li").children("a.thumbnail").removeClass("image_checked");
+                } });
+        });
+
+    </script>
 <!-- Single button -->
 <div class="btn-group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         Ação <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-        <li onclick="return checkAllImages();"><a href="#">Selecionar Todos</a></li>
+        <li><a href="#" id="btn_selecionarTodos">Selecionar Todos</a></li>
 
         <li class="divider"></li>
         <li onclick="return bloquearImagens_selecionadas()"><a href="#">Bloquear Imagens </a></li>
