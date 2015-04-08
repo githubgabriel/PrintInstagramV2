@@ -56,9 +56,10 @@ else if ($a == "crontabSalvar") {
 
         while($row = $re->fetchObject()) {
 
+            $saida_hash = "";
             $hashing = explode(",",$row->hashtag);
             foreach($hashing as $hashi) {
-                $saida_hash .= "#".$hashi;
+                $saida_hash .= "#".$hashi." ";
             }
 
         ?>
@@ -69,7 +70,7 @@ else if ($a == "crontabSalvar") {
                 <img class="img-responsive" src="<?=$row->json_images_thumbnail?>">
             </a>
        <? if(!$row->visible) { ?>
-            <div class="image_blocked">BLOQUEADO</div>
+            <div class="image_blocked" style="padding-top:20px;padding-bottom:20px;">BLOQUEADO</div>
        <? } ?>
             <div class="image_obs"> <span> <a href="<?=$row->json_link?>" target="_blank"><b><?=$row->json_user_username?></b></a> <br><?=$saida_hash?> </span></div>
         </li>

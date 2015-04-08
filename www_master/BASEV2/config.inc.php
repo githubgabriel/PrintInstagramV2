@@ -26,11 +26,11 @@ if(HOST_ROOT == "localhost:8888" or HOST_ROOT == "localhost" or HOST_ROOT == "12
     define("DATABASE_PASS","root1313");
     define("DATABASE_DB","gabriel_instagramv2");
 } else {
-
-    /* Conexao Online aqui.... */
-
+    define("DATABASE_HOST","localhost");
+    define("DATABASE_LOGIN","root");
+    define("DATABASE_PASS","root1313");
+    define("DATABASE_DB","gabriel_instagramv2");
 }
-
 
 define("CLIENTE_ID", "1d12369666f64e0b90a6ac9364a02bd9");
 define("SECRET_ID", "0a010ca1c774483c98a7f5b46ab8a97a");

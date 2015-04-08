@@ -101,11 +101,16 @@ $instagramv2 = new instagramv2();
         Ação <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
+        <li onclick="return checkAllImages();"><a href="#">Selecionar Todos</a></li>
+
+        <li class="divider"></li>
         <li onclick="return bloquearImagens_selecionadas()"><a href="#">Bloquear Imagens </a></li>
         <li onclick="return desbloquearImagens_selecionadas()"><a href="#">Desbloquear Imagens </a></li>
-        <li onclick="return deletarImagens_selecionadas()"><a href="#">Deletar Imagens </a></li>
+
         <li class="divider"></li>
-        <li onclick="return checkAllImages();"><a href="#">Selecionar Todos</a></li>
+
+        <li onclick="return deletarImagens_selecionadas()"><a href="#">Deletar Imagens </a></li>
+
     </ul>
 </div>
 

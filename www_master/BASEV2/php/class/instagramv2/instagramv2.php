@@ -143,33 +143,12 @@ class instagramv2 {
         return $this->mysqltools->selectSQL();
     }
 
-    public function hashtag_insertImageData($hashtag_id, $item) {
-
-        $hashtag = implode(",",$item["tags"]);
-        $created_time = $item["created_time"];
-        $link = $item["link"];
-        $likes_count = $item["likes"]["count"];
-        $likes_data = $item["likes"]["data"];
-        $images_low_resolution = $item["images"]["low_resolution"]["url"];
-        $images_thumbnail = $item["images"]["thumbnail"]["url"];
-        $images_standard_resolution = $item["images"]["standard_resolution"]["url"];
-        $caption_text = $item["caption"]["text"];
-        $caption_id = $item["caption"]["id"];
-        $type = $item["type"];
-        $id = $item["id"];
-        $user_username = $item["user"]["username"];
-        $user_profile_picture = $item["user"]["profile_picture"];
-        $user_id = $item["user"]["id"];
-        $user_full_name = $item["user"]["full_name"];
-
-        // echo "<pre>";print_r($item);
-
+    public function hashtag_insertImageData($item) {
         $this->mysqltools->clear();
         $this->mysqltools->setTabela($this->table_hashtag_images);
         $this->mysqltools->setPreValues("(hashtag_id, hashtag, json_type, json_id, json_link, json_user_id, json_user_profile_picture, json_user_username, json_user_full_name, json_images_low_resolution, json_images_standard_resolution, json_images_thumbnail, json_caption_text, json_created_time, visible)");
-        $this->mysqltools->setValues("('{$hashtag_id}','{$hashtag}','{$type}','{$id}','{$link}','{$user_id}','{$user_profile_picture}','{$user_username}','{$user_full_name}','{$images_low_resolution}','{$images_standard_resolution}','{$images_thumbnail}','{$caption_text}','{$created_time}', 1)");
+        $this->mysqltools->setValues($item);
         return $this->mysqltools->insertSQL();
-
     }
 
 
