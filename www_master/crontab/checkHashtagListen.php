@@ -21,12 +21,14 @@ while($row = $re->fetchObject()) {
 
     $hashtag = $row->hashtag;
     $hashtag_id = $row->id;
-
-    getDataRecursive($hashtag, $hashtag_id, "");
+echo "[[while]]";
+    getDataRecursive($hashtag, $hashtag_id, "", 0);
 
 }
 
-function getDataRecursive($hashtag, $hashtag_id, $url) {
+$contador = 0;
+
+function getDataRecursive($hashtag, $hashtag_id, $url, $contador) {
 
     $GLOBALS["instagramApi"]->setHashtag($hashtag);
     $json = $GLOBALS["instagramApi"]->getJsonImagens($url);
@@ -43,8 +45,10 @@ function getDataRecursive($hashtag, $hashtag_id, $url) {
             /* Verifica no banco de dados se ja existe imagem com este ID  */
             $sql = $GLOBALS["instagramv2"]->hashtag_checkImageId($item["id"]);
             $re2 = $GLOBALS["conexao"]->query($sql);
-
+            $controlInterno  = false;
             if(!$re2->rowCount()) {
+
+                $controlInterno = true;
                 /* Insert image Data array */
                 $hashtag = implode(",",$item["tags"]);
                 $created_time = $item["created_time"];
@@ -54,29 +58,40 @@ function getDataRecursive($hashtag, $hashtag_id, $url) {
                 $images_low_resolution = $item["images"]["low_resolution"]["url"];
                 $images_thumbnail = $item["images"]["thumbnail"]["url"];
                 $images_standard_resolution = $item["images"]["standard_resolution"]["url"];
-                $caption_text = $item["caption"]["text"];
+                $caption_text = addslashes($item["caption"]["text"]);
                 $caption_id = $item["caption"]["id"];
                 $type = $item["type"];
                 $id = $item["id"];
                 $user_username = $item["user"]["username"];
                 $user_profile_picture = $item["user"]["profile_picture"];
                 $user_id = $item["user"]["id"];
-                $user_full_name = $item["user"]["full_name"];
+                $user_full_name = addslashes($item["user"]["full_name"]);
                 $tmp_sql .= "('{$hashtag_id}','{$hashtag}','{$type}','{$id}','{$link}','{$user_id}','{$user_profile_picture}','{$user_username}','{$user_full_name}','{$images_low_resolution}','{$images_standard_resolution}','{$images_thumbnail}','{$caption_text}','{$created_time}', 1),";
+                $contador++;
             }
 
         }
+        echo "[$contador]";
 
     }
+
     /* Remove ultima virgula */
     $tmp_sql = substr($tmp_sql,0, -1);
+    if($controlInterno) {
 
-    $sql = $GLOBALS["instagramv2"]->hashtag_insertImageData($tmp_sql);
-    $re3 = $GLOBALS["conexao"]->query($sql);
+        echo ">registrar..<";
+
+            $sql = $GLOBALS["instagramv2"]->hashtag_insertImageData($tmp_sql);
+            $re3 = $GLOBALS["conexao"]->query($sql);
+
+    }
+
+    if($contador >= 20) { echo $json_inArray['pagination']["next_url"]; die("Morreu -> ".$contador); return; }
 
     if($json_inArray['pagination']["next_url"] != "") {
 
-        getDataRecursive($hashtag, $hashtag_id, $json_inArray['pagination']["next_url"]);
+       echo "[RECURSIVE]";
+       getDataRecursive($hashtag, $hashtag_id, $json_inArray['pagination']["next_url"], $contador);
 
     }
 

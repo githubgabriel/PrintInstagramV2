@@ -73,10 +73,9 @@ $instagramv2 = new instagramv2();
     <tr>
         <th width="25">  <input type="checkbox" id="checkBtn" name="check[]" value="1" />  </th>
         <th width="60">Id</th>
-        <th># HashTag</th>
+        <th width="220"># HashTag</th>
         <th width="120">Layout HTML</th>
         <th width="230">Data Inicio</th>
-        <th width="230">Data Fim </th>
         <th width="140"> Qtd Imagens</th>
         <th width="150"> Cron Status </th>
     </tr>
@@ -112,6 +111,13 @@ $instagramv2 = new instagramv2();
                     <div class="form-group">
                         <label for="recipient-name" class="control-label">#Hashtag Nome</label>
                         <input type="text" class="form-control" name="hashtag">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Status Cron</label>
+                        <select class="form-control" name="status">
+                            <option value="1">Ligado</option>
+                            <option value="0">Desligado</option>
+                        </select>
                     </div>
                 </form>
 

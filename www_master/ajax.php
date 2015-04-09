@@ -203,9 +203,54 @@ else if($a == "desligarHashtag_selecionadas") {
                 <button type="button" onclick="return modal_layoutImpressao(<?=$row->id;?>);" class="btn btn-info">Layout</button>
 </td>
             <td><?=$row->datetime_inicio;?></td>
-            <td> <?=$row->datetime_fim;?> </td>
             <td align="center"> <a href="hashtag_imagens.php?hashtag=<?=$row->hashtag;?>"><?=$re2->rowCount();?></a> </td>
             <td align="center">  <b style="color:<?=$color?>;"><?=$row->status;?></b> </td>
+        </tr>
+
+
+    <?
+    }
+} else if($a == "impressoraRequisicoes_refresh") {
+
+
+    $sql = $instagramv2->cliente_selectImpressorasRequisicoes("*, hashtag_impressoras_pedido.status as impressora_status, hashtag_listen.status as hashtag_status", "hashtag_listen ON hashtag_id = hashtag_listen.id INNER JOIN hashtag_impressoras_online ON impressoras_id = hashtag_impressoras_online.id INNER JOIN hashtag_imagens ON imagens_id = hashtag_imagens.id", "impressora_status asc");
+
+    $re = $conexao->query($sql);
+
+    if(!$re->rowCount()) {
+        ?>  <tr class="success">
+            <td align="center" colspan="7">  <b style="color:green;">Nenhuma requisição registrada.</b> </td>
+        </tr> <?
+    }
+
+    while($row = $re->fetchObject()) {
+
+
+        if($row->impressora_status == "0") {
+            $row->impressora_status = "Aguardando na Fila..."; $color = "gray"; $class = "success";
+            $row->impressora_nome = "<b>".$row->impressora_nome."</b>";
+        } else if($row->impressora_status == "1") {
+            $row->impressora_status = "Impressão OK :D"; $color = "green"; $class = "active";
+        }else {
+            $row->impressora_status = "Erro ao Imprimir"; $color = "red"; $class = "danger";
+        }
+
+        if(!$row->time) { $row->time = " --- ";}
+
+        ?>
+
+
+        <tr class="<?=$class?>">
+            <th style="vertical-align: middle;" scope="row">1</th>
+            <td style="vertical-align: middle;" ><?=$row->impressora_nome;?> <span class="badge"> #<?=$row->hashtag;?> </span></td>
+            <td style="vertical-align: middle;">
+
+                <img src="<?=$row->json_images_low_resolution;?>" width="50" class="img-thumbnail">
+
+            </td>
+            <td style="vertical-align: middle;"><?=$row->time?></td>
+            <td align="center" style="vertical-align: middle;">  <b style="color:<?=$color?>;"><?=$row->impressora_status;?></b> </td>
+
         </tr>
 
 
@@ -218,13 +263,28 @@ else if($a == "desligarHashtag_selecionadas") {
 
     $re = $conexao->query($sql);
     $html = $re->fetchObject();
-    echo $html->layout_impressao_html;
 
-} else if($a == "new_hashtagListen_salvar") {
+    $html_final = ($html->layout_impressao_html);
+
+    echo $html_final;
+
+} else if($a == "modal_layoutImpressao_salvar") {
+
+    $html = $_REQUEST["html"];
+    $id = $_REQUEST["hashtag_id"];
+
+    $sql = $instagramv2->hashtag_update($id, "layout_impressao_html = '".$html."'");
+
+    $re = $conexao->query($sql);
+
+    echo "1";
+
+}else if($a == "new_hashtagListen_salvar") {
 
     $hashtag = $_REQUEST["hashtag"];
+    $status = $_REQUEST["status"];
 
-    $sql = $instagramv2->hashtag_insert("(hashtag, datetime_inicio, status)", "('".$hashtag."', NOW(), 1)");
+    $sql = $instagramv2->hashtag_insert("(hashtag, datetime_inicio, status)", "('".$hashtag."', NOW(), ".$status.")");
 
     $re = $conexao->query($sql);
 

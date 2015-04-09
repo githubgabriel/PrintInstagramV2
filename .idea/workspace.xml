@@ -25,32 +25,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="hashtag_listen.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www_master/hashtag_listen.php">
+      <file leaf-file-name="instagramv2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2/instagramv2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43057996" vertical-offset="805" max-vertical-offset="2850">
-              <caret line="70" column="41" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
-              <folding />
+            <state vertical-scroll-proportion="-4.96" vertical-offset="1102" max-vertical-offset="4545">
+              <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+              <folding>
+                <element signature="e#36#67#0#PHP" expanded="true" />
+                <marker date="1428610233000" expanded="true" signature="755:790" placeholder="..." />
+                <marker date="1428610233000" expanded="true" signature="7246:7466" placeholder="insert into ..." />
+                <marker date="1428610233000" expanded="true" signature="7587:7650" placeholder="select idd f.._this_table_imagens where..." />
+                <marker date="1428610233000" expanded="true" signature="7902:7961" placeholder="select * fro.._this_table_imagens where..." />
+                <marker date="1428610233000" expanded="true" signature="8118:8177" placeholder="select * fro.._this_table_imagens where..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www_master/css/site.css">
+      <file leaf-file-name="mysqltools.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/mysqltools/mysqltools.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="930">
-              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hashtag_imagens.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www_master/hashtag_imagens.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="2325">
-              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="94.083336" vertical-offset="2873" max-vertical-offset="4380">
+              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+              <folding>
+                <marker date="1428609795000" expanded="true" signature="1891:1997" placeholder="select :_thi..." />
+                <marker date="1428609795000" expanded="true" signature="2266:2327" placeholder="insert into ..." />
+                <marker date="1428609795000" expanded="true" signature="2425:2458" placeholder="delete from ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,39 +59,19 @@
       <file leaf-file-name="ajax.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www_master/ajax.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2484" max-vertical-offset="3555">
-              <caret line="172" column="62" selection-start-line="172" selection-start-column="62" selection-end-line="172" selection-end-column="62" />
+            <state vertical-scroll-proportion="-7.82" vertical-offset="2594" max-vertical-offset="4455">
+              <caret line="200" column="15" selection-start-line="200" selection-start-column="15" selection-end-line="200" selection-end-column="15" />
               <folding>
-                <marker date="1428529568000" expanded="false" signature="2021:2069" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkHashtagListen.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www_master/crontab/checkHashtagListen.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="402" max-vertical-offset="1785">
-              <caret line="73" column="59" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="59" />
-              <folding>
-                <element signature="e#63#96#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instagramv2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2/instagramv2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2272" max-vertical-offset="4230">
-              <caret line="167" column="81" selection-start-line="167" selection-start-column="81" selection-end-line="167" selection-end-column="81" />
-              <folding>
-                <element signature="e#36#67#0#PHP" expanded="true" />
-                <marker date="1428529001000" expanded="true" signature="755:790" placeholder="..." />
-                <marker date="1428529001000" expanded="true" signature="6671:6891" placeholder="insert into ..." />
-                <marker date="1428529001000" expanded="true" signature="7012:7075" placeholder="select idd f.._this_table_imagens where..." />
-                <marker date="1428529001000" expanded="true" signature="7327:7386" placeholder="select * fro.._this_table_imagens where..." />
-                <marker date="1428529001000" expanded="true" signature="7543:7602" placeholder="select * fro.._this_table_imagens where..." />
+                <element signature="e#4154#4174#0#HTML" expanded="true" />
+                <element signature="e#5377#5403#0#HTML" expanded="true" />
+                <element signature="e#6050#6070#0#HTML" expanded="true" />
+                <element signature="e#6772#6803#0#HTML" expanded="true" />
+                <element signature="e#6839#6870#0#HTML" expanded="true" />
+                <element signature="e#6971#7002#0#HTML" expanded="true" />
+                <element signature="e#7140#7171#0#HTML" expanded="true" />
+                <element signature="e#7224#7255#0#HTML" expanded="true" />
+                <element signature="e#7261#7287#0#HTML" expanded="true" />
+                <marker date="1428614050000" expanded="true" signature="2021:2069" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -99,33 +80,54 @@
       <file leaf-file-name="site.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www_master/js/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="6060">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state vertical-scroll-proportion="-10.153846" vertical-offset="2271" max-vertical-offset="6915">
+              <caret line="169" column="40" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="40" />
               <folding>
-                <marker date="1428529852000" expanded="false" signature="10370:10398" placeholder="..." />
+                <marker date="1428613976000" expanded="true" signature="12234:12262" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="impressoras_requisicoes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_master/impressoras_requisicoes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.4583333" vertical-offset="481" max-vertical-offset="1410">
+              <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www_master/webservice/index.php">
+        <entry file="file://$PROJECT_DIR$/www_cliente/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="120">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.583333" vertical-offset="1576" max-vertical-offset="2175">
+              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www_master/index.php">
+      <file leaf-file-name="site.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_cliente/js/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.458334" vertical-offset="616" max-vertical-offset="2070">
-              <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
-              <folding>
-                <marker date="1428530292000" expanded="false" signature="3619:3635" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="1228" max-vertical-offset="2925">
+              <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hashtag_listen.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www_master/hashtag_listen.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.10544816" vertical-offset="1065" max-vertical-offset="2940">
+              <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,26 +149,26 @@
         <option value="$PROJECT_DIR$/www_master/webservice/terminal_cliente/ImpressoraUpdateStatus.php" />
         <option value="$PROJECT_DIR$/www_cliente/BASEV2/php/class/instagramv2/webservice.php" />
         <option value="$PROJECT_DIR$/www_cliente/ajax.php" />
-        <option value="$PROJECT_DIR$/www_cliente/index.php" />
         <option value="$PROJECT_DIR$/www_cliente/js/site.js" />
-        <option value="$PROJECT_DIR$/www_master/BASEV2/php/class/mysqltools/mysqltools.php" />
         <option value="$PROJECT_DIR$/www_master/crontab/teste.php" />
         <option value="$PROJECT_DIR$/www_master/impressoras_online.php" />
         <option value="$PROJECT_DIR$/www_master/require/menu.php" />
-        <option value="$PROJECT_DIR$/www_master/impressoras_requisicoes.php" />
         <option value="$PROJECT_DIR$/www_master/webservice/instagram/getJsonCount.php" />
         <option value="$PROJECT_DIR$/www_master/consulta_hashtag.php" />
         <option value="$PROJECT_DIR$/www_master/crontab/checkImpressoraStatus.php" />
-        <option value="$PROJECT_DIR$/www_master/crontab/checkHashtagListen.php" />
         <option value="$PROJECT_DIR$/www_master/BASEV2/config.inc.php" />
         <option value="$PROJECT_DIR$/www_master/js/check.js" />
         <option value="$PROJECT_DIR$/www_master/hashtag_imagens.php" />
         <option value="$PROJECT_DIR$/www_master/css/site.css" />
-        <option value="$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2/instagramv2.php" />
-        <option value="$PROJECT_DIR$/www_master/ajax.php" />
-        <option value="$PROJECT_DIR$/www_master/js/site.js" />
         <option value="$PROJECT_DIR$/www_master/webservice/index.php" />
         <option value="$PROJECT_DIR$/www_master/index.php" />
+        <option value="$PROJECT_DIR$/www_master/crontab/checkHashtagListen.php" />
+        <option value="$PROJECT_DIR$/www_master/BASEV2/php/class/mysqltools/mysqltools.php" />
+        <option value="$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2/instagramv2.php" />
+        <option value="$PROJECT_DIR$/www_cliente/index.php" />
+        <option value="$PROJECT_DIR$/www_master/impressoras_requisicoes.php" />
+        <option value="$PROJECT_DIR$/www_master/js/site.js" />
+        <option value="$PROJECT_DIR$/www_master/ajax.php" />
         <option value="$PROJECT_DIR$/www_master/hashtag_listen.php" />
       </list>
     </option>
@@ -203,7 +205,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,6 +327,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -366,8 +385,119 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BASEV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BASEV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BASEV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysqltools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_cliente" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstagramV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_cliente" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,6 +511,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www_master/images" />
       <recent name="$PROJECT_DIR$/www_master/crontab" />
       <recent name="$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2" />
     </key>
@@ -400,15 +531,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -431,24 +562,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23990306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -485,7 +616,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="402" max-vertical-offset="1785">
           <caret line="73" column="59" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="59" />
           <folding>
-            <element signature="e#63#96#0#PHP" expanded="true" />
+            <element signature="e#63#96#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -496,11 +627,11 @@
           <caret line="167" column="81" selection-start-line="167" selection-start-column="81" selection-end-line="167" selection-end-column="81" />
           <folding>
             <element signature="e#36#67#0#PHP" expanded="true" />
-            <marker date="1428529001000" expanded="true" signature="755:790" placeholder="..." />
-            <marker date="1428529001000" expanded="true" signature="6671:6891" placeholder="insert into ..." />
-            <marker date="1428529001000" expanded="true" signature="7012:7075" placeholder="select idd f.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7327:7386" placeholder="select * fro.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7543:7602" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="755:790" placeholder="..." />
+            <marker date="1428610233000" expanded="true" signature="7246:7466" placeholder="insert into ..." />
+            <marker date="1428610233000" expanded="true" signature="7587:7650" placeholder="select idd f.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="7902:7961" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="8118:8177" placeholder="select * fro.._this_table_imagens where..." />
           </folding>
         </state>
       </provider>
@@ -510,7 +641,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="6060">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <marker date="1428529852000" expanded="false" signature="10370:10398" placeholder="..." />
+            <marker date="1428613976000" expanded="true" signature="12234:12262" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -519,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -527,9 +657,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1201" max-vertical-offset="2070">
           <caret line="34" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <marker date="1428530292000" expanded="false" signature="3619:3635" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -554,7 +682,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="3135">
           <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="17" />
           <folding>
-            <marker date="1428529852000" expanded="false" signature="10370:10398" placeholder="..." />
+            <marker date="1428613976000" expanded="true" signature="12234:12262" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -572,7 +700,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="1905">
           <caret line="65" column="72" selection-start-line="65" selection-start-column="72" selection-end-line="65" selection-end-column="72" />
           <folding>
-            <marker date="1428529568000" expanded="false" signature="2021:2069" placeholder="..." />
+            <element signature="e#4154#4174#0#HTML" expanded="true" />
+            <element signature="e#5377#5403#0#HTML" expanded="true" />
+            <element signature="e#6050#6070#0#HTML" expanded="true" />
+            <element signature="e#6772#6803#0#HTML" expanded="true" />
+            <element signature="e#6839#6870#0#HTML" expanded="true" />
+            <element signature="e#6971#7002#0#HTML" expanded="true" />
+            <element signature="e#7140#7171#0#HTML" expanded="true" />
+            <element signature="e#7224#7255#0#HTML" expanded="true" />
+            <element signature="e#7261#7287#0#HTML" expanded="true" />
+            <marker date="1428614050000" expanded="true" signature="2021:2069" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -590,11 +727,11 @@
           <caret line="99" column="39" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="39" />
           <folding>
             <element signature="e#36#67#0#PHP" expanded="true" />
-            <marker date="1428529001000" expanded="true" signature="755:790" placeholder="..." />
-            <marker date="1428529001000" expanded="true" signature="6671:6891" placeholder="insert into ..." />
-            <marker date="1428529001000" expanded="true" signature="7012:7075" placeholder="select idd f.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7327:7386" placeholder="select * fro.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7543:7602" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="755:790" placeholder="..." />
+            <marker date="1428610233000" expanded="true" signature="7246:7466" placeholder="insert into ..." />
+            <marker date="1428610233000" expanded="true" signature="7587:7650" placeholder="select idd f.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="7902:7961" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="8118:8177" placeholder="select * fro.._this_table_imagens where..." />
           </folding>
         </state>
       </provider>
@@ -610,9 +747,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1860">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1428530292000" expanded="false" signature="3619:3635" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -636,11 +771,11 @@
           <caret line="31" column="31" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="39" />
           <folding>
             <element signature="e#36#67#0#PHP" expanded="true" />
-            <marker date="1428529001000" expanded="true" signature="755:790" placeholder="..." />
-            <marker date="1428529001000" expanded="true" signature="6671:6891" placeholder="insert into ..." />
-            <marker date="1428529001000" expanded="true" signature="7012:7075" placeholder="select idd f.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7327:7386" placeholder="select * fro.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7543:7602" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="755:790" placeholder="..." />
+            <marker date="1428610233000" expanded="true" signature="7246:7466" placeholder="insert into ..." />
+            <marker date="1428610233000" expanded="true" signature="7587:7650" placeholder="select idd f.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="7902:7961" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="8118:8177" placeholder="select * fro.._this_table_imagens where..." />
           </folding>
         </state>
       </provider>
@@ -715,13 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_cliente/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23986487" vertical-offset="1598" max-vertical-offset="2190">
-          <caret line="116" column="115" selection-start-line="116" selection-start-column="115" selection-end-line="116" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www_cliente/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43074325" vertical-offset="150" max-vertical-offset="795">
@@ -733,20 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43074325" vertical-offset="0" max-vertical-offset="750">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/mysqltools/mysqltools.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7601351" vertical-offset="1035" max-vertical-offset="3510">
-          <caret line="99" column="66" selection-start-line="99" selection-start-column="66" selection-end-line="99" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www_cliente/js/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58603895" vertical-offset="2309" max-vertical-offset="2925">
-          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -768,13 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.037975" vertical-offset="1436" max-vertical-offset="2055">
           <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/impressoras_requisicoes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.077328645" vertical-offset="121" max-vertical-offset="2055">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -814,96 +921,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/js/check.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63517916" vertical-offset="0" max-vertical-offset="1575">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/hashtag_imagens.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="2325">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www_master/css/site.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="930">
+        <state vertical-scroll-proportion="0.6812816" vertical-offset="256" max-vertical-offset="930">
           <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/ajax.php">
+    <entry file="file://$PROJECT_DIR$/www_master/hashtag_imagens.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2484" max-vertical-offset="3555">
-          <caret line="172" column="62" selection-start-line="172" selection-start-column="62" selection-end-line="172" selection-end-column="62" />
-          <folding>
-            <marker date="1428529568000" expanded="false" signature="2021:2069" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.7908612" vertical-offset="1650" max-vertical-offset="2325">
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2/instagramv2.php">
+    <entry file="file://$PROJECT_DIR$/www_master/webservice/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2272" max-vertical-offset="4230">
-          <caret line="167" column="81" selection-start-line="167" selection-start-column="81" selection-end-line="167" selection-end-column="81" />
-          <folding>
-            <element signature="e#36#67#0#PHP" expanded="true" />
-            <marker date="1428529001000" expanded="true" signature="755:790" placeholder="..." />
-            <marker date="1428529001000" expanded="true" signature="6671:6891" placeholder="insert into ..." />
-            <marker date="1428529001000" expanded="true" signature="7012:7075" placeholder="select idd f.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7327:7386" placeholder="select * fro.._this_table_imagens where..." />
-            <marker date="1428529001000" expanded="true" signature="7543:7602" placeholder="select * fro.._this_table_imagens where..." />
-          </folding>
+        <state vertical-scroll-proportion="0.050675675" vertical-offset="0" max-vertical-offset="592">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_master/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.910473" vertical-offset="616" max-vertical-offset="2070">
+          <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www_master/crontab/checkHashtagListen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="402" max-vertical-offset="1785">
-          <caret line="73" column="59" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="59" />
+        <state vertical-scroll-proportion="-8.791667" vertical-offset="464" max-vertical-offset="2010">
+          <caret line="45" column="64" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="64" />
           <folding>
-            <element signature="e#63#96#0#PHP" expanded="true" />
+            <element signature="e#63#96#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_master/js/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6331169" vertical-offset="0" max-vertical-offset="1575">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/instagramv2/instagramv2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.96" vertical-offset="1102" max-vertical-offset="4545">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+          <folding>
+            <element signature="e#36#67#0#PHP" expanded="true" />
+            <marker date="1428610233000" expanded="true" signature="755:790" placeholder="..." />
+            <marker date="1428610233000" expanded="true" signature="7246:7466" placeholder="insert into ..." />
+            <marker date="1428610233000" expanded="true" signature="7587:7650" placeholder="select idd f.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="7902:7961" placeholder="select * fro.._this_table_imagens where..." />
+            <marker date="1428610233000" expanded="true" signature="8118:8177" placeholder="select * fro.._this_table_imagens where..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_master/BASEV2/php/class/mysqltools/mysqltools.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="94.083336" vertical-offset="2873" max-vertical-offset="4380">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+          <folding>
+            <marker date="1428609795000" expanded="true" signature="1891:1997" placeholder="select :_thi..." />
+            <marker date="1428609795000" expanded="true" signature="2266:2327" placeholder="insert into ..." />
+            <marker date="1428609795000" expanded="true" signature="2425:2458" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_cliente/js/site.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1228" max-vertical-offset="2925">
+          <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_cliente/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.583333" vertical-offset="1576" max-vertical-offset="2175">
+          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_master/impressoras_requisicoes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4583333" vertical-offset="481" max-vertical-offset="1410">
+          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www_master/js/site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="6060">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state vertical-scroll-proportion="-10.153846" vertical-offset="2271" max-vertical-offset="6915">
+          <caret line="169" column="40" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="40" />
           <folding>
-            <marker date="1428529852000" expanded="false" signature="10370:10398" placeholder="..." />
+            <marker date="1428613976000" expanded="true" signature="12234:12262" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/webservice/index.php">
+    <entry file="file://$PROJECT_DIR$/www_master/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="120">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www_master/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.458334" vertical-offset="616" max-vertical-offset="2070">
-          <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        <state vertical-scroll-proportion="-7.82" vertical-offset="2594" max-vertical-offset="4455">
+          <caret line="200" column="15" selection-start-line="200" selection-start-column="15" selection-end-line="200" selection-end-column="15" />
           <folding>
-            <marker date="1428530292000" expanded="false" signature="3619:3635" placeholder="..." />
+            <element signature="e#4154#4174#0#HTML" expanded="true" />
+            <element signature="e#5377#5403#0#HTML" expanded="true" />
+            <element signature="e#6050#6070#0#HTML" expanded="true" />
+            <element signature="e#6772#6803#0#HTML" expanded="true" />
+            <element signature="e#6839#6870#0#HTML" expanded="true" />
+            <element signature="e#6971#7002#0#HTML" expanded="true" />
+            <element signature="e#7140#7171#0#HTML" expanded="true" />
+            <element signature="e#7224#7255#0#HTML" expanded="true" />
+            <element signature="e#7261#7287#0#HTML" expanded="true" />
+            <marker date="1428614050000" expanded="true" signature="2021:2069" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www_master/hashtag_listen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43057996" vertical-offset="805" max-vertical-offset="2850">
-          <caret line="70" column="41" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.10544816" vertical-offset="1065" max-vertical-offset="2940">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
           <folding />
         </state>
       </provider>

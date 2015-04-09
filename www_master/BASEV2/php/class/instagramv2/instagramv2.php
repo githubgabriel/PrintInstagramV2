@@ -78,14 +78,28 @@ class instagramv2 {
         return $this->mysqltools->selectSQL();
 
     }
-    public function cliente_selectImpressorasRequisicoes() {
+
+    public function cliente_selectImpressorasRequisicoes($select = 0, $InnerJoin = 0, $order = 0) {
         $this->mysqltools->clear();
         $this->mysqltools->setTabela($this->table_impressoras_req);
+        if($select) {
+            $this->mysqltools->setSelect($select);
+        }
+        if($order) {
+            $this->mysqltools->setOrder($order);
+        }
+        if($InnerJoin) {
+            $this->mysqltools->setInnerJoin($InnerJoin);
+        }
         return $this->mysqltools->selectSQL();
     }
-    public function cliente_selectImpressoras() {
+
+    public function cliente_selectImpressoras($where = 0) {
         $this->mysqltools->clear();
         $this->mysqltools->setTabela($this->table_impressoras);
+        if($where) {
+            $this->mysqltools->setWhere($where);
+        }
         return $this->mysqltools->selectSQL();
     }
     public function cliente_deleteImpressora($id) {
@@ -116,7 +130,7 @@ class instagramv2 {
     }
 
     public function hashtag_updateImage($id,$set) {
-        $time = time();
+
         $this->mysqltools->clear();
         $this->mysqltools->setTabela($this->table_hashtag_images);
         $this->mysqltools->setWhere("id = '$id'");
@@ -157,6 +171,7 @@ class instagramv2 {
 
     public function hashtag_checkImageId($jsonid) {
         $this->mysqltools->clear();
+        $this->mysqltools->setSelect("json_id");
         $this->mysqltools->setTabela($this->table_hashtag_images);
         $this->mysqltools->setWhere("json_id = '".$jsonid."'");
         return $this->mysqltools->selectSQL();
@@ -177,6 +192,12 @@ class instagramv2 {
         return $this->mysqltools->insertSQL();
     }
 
+
+    public function layoutHtmlDecodeTags($html) {
+
+        $html = str_replace("{{json_images_standard_resolution}}","aeee:D",$html);
+        return $html;
+    }
 
     public function get_client_id() {
         return $this->client_id;

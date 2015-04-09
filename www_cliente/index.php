@@ -127,7 +127,7 @@ require("require/menu.php"); ?>
     <div class="col-md-12" style="margin-top:30px;">
         <b>Impressora Padrão: </b>
         <?
-        echo "<pre>" . shell_exec("lpstat -d 2>&1") . "</pre>";
+            echo "<pre>" . shell_exec("lpstat -d 2>&1") . "</pre>";
         ?>
     </div>
 </div>

@@ -7,13 +7,14 @@ function new_hashtagListen() {
 function new_hashtagListen_salvar() {
 
     var hashtag = $("#modal1 input[name=hashtag]").val();
+    var status = $("#modal1 select[name=status]").val();
     if(!hashtag) {   aviso("Digite nome da Hashtag!", "error"); }
     if(hashtag) {
         $.ajax({
             type: 'post',
             url: 'ajax.php',
             dataType: false,
-            data: "acao=new_hashtagListen_salvar&hashtag=" + hashtag,
+            data: "acao=new_hashtagListen_salvar&hashtag=" + hashtag + "&status=" + status,
             beforeSend: function () {
 
             },
@@ -22,6 +23,8 @@ function new_hashtagListen_salvar() {
                 aviso("Hashtag registrada com <br> sucesso", "success");
                 hashtagListen_refresh();
                 $('#modal1').modal("hide");
+                $("#modal1 input[name=hashtag]").val("");
+                $("#modal1 select[name=status]").val(1);
             }
         });
     }
@@ -62,20 +65,43 @@ function modal_layoutImpressao(idHashtag) {
             $("input[name=hashtagId_hidden]").val(idHashtag);
         },
         success: function (html) {
+            $("#modal2 form").show();
+            $("#modal2 #preView").hide();
+
             console.log("Call Ajax: modal_layoutImpressao >> retorno: " + idHashtag);
             $("form textarea").val(html);
             $("#preView #html").html(html);
+
+            layout_preVisualizar(true);
 
         }
     });
     }
 }
 
+function replaceAll(find, replace, str) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
+
 function layout_preVisualizar(t) {
+
 
     if (t) {
         $("#modal2 form").hide();
         var conteudo =  $("form textarea").val();
+
+        conteudo = replaceAll("{{json_images_standard_resolution}}", "images/demo.jpg", conteudo);
+        conteudo = replaceAll("{{json_images_thumbnail}}", "images/demo.jpg", conteudo);
+        conteudo = replaceAll("{{json_images_low_resolution}}", "images/demo.jpg", conteudo);
+        conteudo = replaceAll("{{hashtag}}", "HashtagName", conteudo);
+        conteudo = replaceAll("{{json_user_full_name}}", "Gabriel A. Barbosa", conteudo);
+        conteudo = replaceAll("{{json_user_username}}", "gnomoverde", conteudo);
+        conteudo = replaceAll("{{json_caption_text}}", "Text los amigos... on nice text :D..", conteudo);
+
+        if(!conteudo) { conteudo = "<center> <h3>Clique em editar  <br>para começar... <br> <img src='images/cat.gif' width='80'> </h3> </center>"; }
+
+        console.log(conteudo);
+
         $("#modal2 #preView #html").html(conteudo);
         $("#modal2 #preView").show();
     } else {
@@ -100,6 +126,37 @@ function hashtag_getImasges() {
         }
     });
 
+
+    return false;
+}
+
+function impressoraRequisicoes_refresh(){
+
+    $("#loadingImg").show();
+
+    $.ajax({
+        type: 'get',
+        url: 'ajax.php',
+        data: "acao=impressoraRequisicoes_refresh",
+        success: function (re) {
+            console.log("Call Ajax: impressoraRequisicoes_refresh >> retorno: " + re);
+            $(".table tbody").html(re);
+            //aviso("Crontab foi reiniciado!", "notice");
+
+            setTimeout(function() {
+
+                $("#loadingImg").hide();
+
+            }, 1000);
+
+        }
+    });
+
+    setTimeout(function() {
+
+        impressoraRequisicoes_refresh();
+
+    }, 3000);
 
     return false;
 }

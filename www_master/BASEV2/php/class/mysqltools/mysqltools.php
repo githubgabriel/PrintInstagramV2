@@ -13,6 +13,8 @@ class mysqltools {
     var $set = null;
     var $preValues = null;
     var $values = null;
+    var $select = null;
+    var $innerJoin = null;
 
     private function where() {
 
@@ -21,6 +23,28 @@ class mysqltools {
             $tmp = " where ".$this->getWhere();
             return $tmp;
 
+        }
+
+    }
+
+    private function select() {
+
+        if($this->getSelect()) {
+
+            $tmp = $this->getSelect();
+
+        } else {
+            $tmp = "*";
+        }
+        return $tmp;
+    }
+
+    private function innerJoin() {
+
+        if($this->getInnerJoin()) {
+
+            $tmp = " INNER JOIN ".$this->getInnerJoin();
+            return $tmp;
         }
 
     }
@@ -82,10 +106,12 @@ class mysqltools {
     public function clear() {
         $this->setWhere(null); $this->setOrder(null);
         $this->setLimit(null); $this->setTabela(null);
+        $this->setSelect(null); $this->setSet(null);
+        $this->setValues(null); $this->setPreValues(null);
     }
 
     public function selectSQL() {
-        $tmp = "select * from {$this->getTabela()} {$this->where()} {$this->order()} {$this->limit()}";
+        $tmp = "select {$this->select()} from {$this->getTabela()} {$this->innerJoin()} {$this->where()} {$this->order()} {$this->limit()}";
         return $tmp;
     }
     public function updateSQL() {
@@ -107,6 +133,38 @@ class mysqltools {
         $this->setWhere($identificador."=".$id);
         $this->setLimit("1");
         return $this->selectSQL();
+    }
+
+    /**
+     * @return null
+     */
+    public function getInnerJoin()
+    {
+        return $this->innerJoin;
+    }
+
+    /**
+     * @param null $innerJoin
+     */
+    public function setInnerJoin($innerJoin)
+    {
+        $this->innerJoin = $innerJoin;
+    }
+
+    /**
+     * @return null
+     */
+    public function getSelect()
+    {
+        return $this->select;
+    }
+
+    /**
+     * @param null $select
+     */
+    public function setSelect($select)
+    {
+        $this->select = $select;
     }
 
     /**
