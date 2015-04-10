@@ -70,12 +70,27 @@ require("require/menu.php"); ?>
     </div>
 
 
-    <div class="col-md-12" style="margin-top:30px;">
+
+
+    <div class="col-md-12" style="margin-top:10px;">
+        <div style="margin-top:10px;margin-bottom:11px;height:20px;">
+            <div id="loadingImg" style="display:none;">
+                <img src="images/icon-refresh.gif"/> <small>Atualizando..</small>
+            </div>
+        </div>
         <b>Shell Exec (lpq): <a href="?clear=1"><button class="btn btn-default"> Cancelar todos Jobs </button></a> </b>
         <?
-        echo "<pre style='margin-top:10px;'>" . shell_exec("lpq 2>&1") . "</pre>";
+        echo "<pre style='margin-top:10px;' id='lpqhtml'>" . shell_exec("lpq 2>&1") . "</pre>";
         ?>
     </div>
+
+
+    <script>
+
+        lpqSystemRefresh();
+
+
+    </script>
 
 
 </div>

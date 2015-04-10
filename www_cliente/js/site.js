@@ -176,6 +176,37 @@ function updateConfigTerminal() {
 
 }
 
+function lpqSystemRefresh(){
+
+    $("#loadingImg").show();
+
+    $.ajax({
+        type: 'get',
+        url: 'ajax.php',
+        data: "acao=lpqSystemRefresh",
+        success: function (re) {
+            console.log("Call Ajax: lpqSystemRefresh >> retorno: " + re);
+            $("#lpqhtml").html(re);
+            //aviso("Crontab foi reiniciado!", "notice");
+
+            setTimeout(function() {
+
+                $("#loadingImg").hide();
+
+            }, 1000);
+
+        }
+    });
+
+    setTimeout(function() {
+
+        lpqSystemRefresh();
+
+    }, 3000);
+
+    return false;
+
+}
 
 function aviso(msg, tipo) {
     $().toastmessage('showToast', {

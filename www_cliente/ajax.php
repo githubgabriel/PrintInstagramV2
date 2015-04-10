@@ -52,6 +52,10 @@ if ($a == "updateConfigTerminal") {
     $_SESSION["cliente_server_status"] = $_GET["valor"];
     echo "1";
 
+}else if ($a == "lpqSystemRefresh") {
+
+    echo shell_exec("lpq 2>&1");
+
 } else if ($a == "checkWebService") {
 
     echo $webservice->checkWebService();
