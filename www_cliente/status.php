@@ -22,6 +22,9 @@ use base\instagramv2\instagramv2;
 
     <? getPluginJS("BootStrap"); ?>
 
+    <? getPluginJS("ToastMessage"); ?>
+
+
     <? include_JS("js/site.js"); ?>
 
 
@@ -34,19 +37,43 @@ require("require/menu.php"); ?>
 
 <div class="container">
 
+<? if($_GET["clear"] == "1") { shell_exec("lprm - 2>&1"); echo "<script>aviso('Todos jobs foram <br> Cancelados!','notice');</script>";} ?>
 
-    <div class="col-md-12" style="margin-top:30px;">
-        <b>Printer destination (lpstat -d): </b>
+
+    <div class="col-md-6" style="margin-top:30px;">
+        <b>Shell Exec (lpstat -d): </b>
         <?
         echo "<pre>" . shell_exec("lpstat -d 2>&1") . "</pre>";
         ?>
     </div>
 
+    <div class="col-md-6" style="margin-top:30px;">
+        <b>Shell Exec (lpstat -p): </b>
+        <?
+        echo "<pre>" . shell_exec("lpstat -p 2>&1") . "</pre>";
+        ?>
+    </div>
 
-    <div class="col-md-12" style="margin-top:30px;">
-        <b>Printer destination (lpstat -a): </b>
+    <div class="col-md-6" style="margin-top:30px;">
+        <b>Shell Exec (lpstat -a): </b>
         <?
         echo "<pre>" . shell_exec("lpstat -a 2>&1") . "</pre>";
+        ?>
+    </div>
+
+
+    <div style="display:none;" class="col-md-6" style="margin-top:30px;">
+        <b>Shell Exec (lpstat -a): </b>
+        <?
+        echo "<pre>" . shell_exec("lpstat -a 2>&1") . "</pre>";
+        ?>
+    </div>
+
+
+    <div class="col-md-12" style="margin-top:30px;">
+        <b>Shell Exec (lpq): <a href="?clear=1"><button class="btn btn-default"> Cancelar todos Jobs </button></a> </b>
+        <?
+        echo "<pre style='margin-top:10px;'>" . shell_exec("lpq 2>&1") . "</pre>";
         ?>
     </div>
 

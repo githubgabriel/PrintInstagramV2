@@ -31,10 +31,21 @@ if ($a == "updateConfigTerminal") {
     $instagramv2->cliente_ShowRodape();
 
 
-} else if ($a == "impressoraUpdateStatus") {
+} else if ($a == "impressoraUpdateStatus_and_JsonRequisicoes") {
 
+    $webservice->impressoraUpdateStatus();
 
-    echo $webservice->impressoraUpdateStatus();
+    $json = $webservice->getJsonRequisicoes();
+
+    if(!$json) { echo "Nenhuma requisição."; } else {
+
+        $Array = json_decode($json, true);
+        //print_r($Array);
+        $instagramv2->_print($Array[0]["imagens_id"]);
+
+        echo $webservice->requisicaoUpdateStatus($Array[0][0], "1");
+
+    }
 
 } else if ($a == "setClienteServerStatus") {
 

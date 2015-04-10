@@ -80,103 +80,47 @@ class instagramv2
     }
 
 
-    public function showImages_($url = "")
-    {
+    public function _generatePDF($idImage) {
 
+        $tempFile = "~/terminal_temp";
+        exec("/bin/mkdir ".$tempFile."");
 
-        $images_array = $this->get_json_imagens($url);
-
-        $this->show_images_data($images_array);
-
-        if ($images_array['pagination']["next_url"] != "") {
-            $this->showImages_($images_array['pagination']["next_url"]);
-        } else {
-            echo "ok";
-        }
-
+        $program = "/usr/local/bin/wkhtmltopdf";
+        $url = "http://localhost:8888/2015/GABRIEL/Pessoal/Instagram%20Api%20Examples/template.php?id=" . $idImage;
+        $tmp_cache = "~/terminal_temp/" . $idImage . ".pdf";
+        exec("$program $url $tmp_cache");
+        echo "[Temp File dir: ".$tmp_cache."]";
+        return $tmp_cache;
 
     }
 
-
-    public function mysql_register_imagem($item)
-    {
-
-        if ($this->mysql_check_existe_idd($item["id"]) == "0") {
-
-            $sql = "insert into " . $this->table_imagens . " (hashtag,idd,usuario,imagem) values
-        ('" . $this->hashtag . "','" . $item['id'] . "','" . $item['user']["username"] . "','" . $item['images']['low_resolution']["url"] . "')";
-            conexao::query($sql);
-
-        }
-    }
-
-    public function mysql_check_existe_idd($idd)
-    {
-        $sql = "select idd from " . $this->table_imagens . " where idd = '" . $idd . "';";
-        $re = conexao::query($sql);
-        $num = conexao::num_rows($re);
-        if ($num > 0) {
-            return "1";
-        } else {
-            return "0";
-        }
-    }
+    public function _print($iamgemid) {
 
 
-    public function get_db_image_array_byId($id)
-    {
-        $sql = "select * from " . $this->table_imagens . " where id = '" . $id . "';";
-        $re = conexao::query($sql);
-        $aw = conexao::fetch_array($re);
-        return $aw;
-    }
-
-    public function print_()
-    {
-
-        $sql = "select * from " . $this->table_imagens . " where imprimir = '0';";
-        $re = conexao::query($sql);
-        $num = conexao::num_rows($re);
-        if ($num > 0) {
-
-            /* somente 2 registros por pedido */
-            if ($num > 2) {
-                $num = 1;
-            }
-
-            for ($i = 0; $i < $num; $i++) {
-                $aw = conexao::fetch_array($re);
-
-                echo "Pedido para impressão: ID:" . $aw["id"];
-
+        if($iamgemid) {
 
                 /* GERANDO PDF .... */
-                $program = "/usr/local/bin/wkhtmltopdf";
-                $url = "http://localhost:8888/2015/GABRIEL/Pessoal/Instagram%20Api%20Examples/template.php?id=" . $aw["id"];
-                $tmp_cache = "/Users/linda/" . $aw["id"] . ".pdf";
-                exec("$program $url $tmp_cache");
+                $link = $this->_generatePDF($iamgemid);
+
+            echo $link;
 
                 /* Imprimindo... */
-                exec('lpr ' . $tmp_cache);
+                $re = exec('lp ' . $link);
 
-                $this->update_coluna_table($this->table_imagens, $aw["id"], "imprimir", "1");
-
-
-            }
+                echo " - [ Exec lp ".$re." ]";
 
         } else {
-            echo "Nenhum pedido de impressão no momento... :/";
+            return "Erro ao criar pedido de impressão.. :/";
         }
 
 
     }
 
-
-    public function update_coluna_table($table, $id, $coluna, $novovalor)
-    {
-        $sql = "update " . $table . " set $coluna = '$novovalor' where id = '" . $id . "';";
-        conexao::query($sql);
+    public function update_coluna_table($table,$id,$coluna,$novovalor) {
+        $sql = "update ".$table." set $coluna = '$novovalor' where id = '".$id."';";
+        return $sql;
     }
+
 
 
 }

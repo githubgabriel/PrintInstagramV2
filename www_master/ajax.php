@@ -213,7 +213,7 @@ else if($a == "desligarHashtag_selecionadas") {
 } else if($a == "impressoraRequisicoes_refresh") {
 
 
-    $sql = $instagramv2->cliente_selectImpressorasRequisicoes("*, hashtag_impressoras_pedido.status as impressora_status, hashtag_listen.status as hashtag_status", "hashtag_listen ON hashtag_id = hashtag_listen.id INNER JOIN hashtag_impressoras_online ON impressoras_id = hashtag_impressoras_online.id INNER JOIN hashtag_imagens ON imagens_id = hashtag_imagens.id", "impressora_status asc");
+    $sql = $instagramv2->cliente_selectImpressorasRequisicoes("*, hashtag_impressoras_pedido.id as hashtag_pedido_id,hashtag_impressoras_pedido.status as impressora_status, hashtag_listen.status as hashtag_status", "hashtag_listen ON hashtag_id = hashtag_listen.id INNER JOIN hashtag_impressoras_online ON impressoras_id = hashtag_impressoras_online.id INNER JOIN hashtag_imagens ON imagens_id = hashtag_imagens.id", "impressora_status asc");
 
     $re = $conexao->query($sql);
 
@@ -231,8 +231,10 @@ else if($a == "desligarHashtag_selecionadas") {
             $row->impressora_nome = "<b>".$row->impressora_nome."</b>";
         } else if($row->impressora_status == "1") {
             $row->impressora_status = "Impressão OK :D"; $color = "green"; $class = "active";
+        }else if($row->impressora_status == "-1") {
+            $row->impressora_status = "Imprimindo..."; $color = "orange"; $class = "info";
         }else {
-            $row->impressora_status = "Erro ao Imprimir"; $color = "red"; $class = "danger";
+            $row->impressora_status = "Erro ao Imprimir"; $color = "red"; $class = "active";
         }
 
         if(!$row->time) { $row->time = " --- ";}
@@ -241,7 +243,7 @@ else if($a == "desligarHashtag_selecionadas") {
 
 
         <tr class="<?=$class?>">
-            <th style="vertical-align: middle;" scope="row">1</th>
+            <th style="vertical-align: middle;" scope="row"><?=$row->hashtag_pedido_id?></th>
             <td style="vertical-align: middle;" ><?=$row->impressora_nome;?> <span class="badge"> #<?=$row->hashtag;?> </span></td>
             <td style="vertical-align: middle;">
 

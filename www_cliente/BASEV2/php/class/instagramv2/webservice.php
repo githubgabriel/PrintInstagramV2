@@ -24,9 +24,24 @@ class webservice
             $rs = $this->getCurl("http://" . $_SESSION["SERVER_MASTER"] . $this->_path . "terminal_cliente/impressoraUpdateStatus.php?impressora_nome=" . $_SESSION["IMPRESSORA_NOME"] . "&senha=senha1313");
             return $rs;
         }
-        return 0;
+
     }
 
+
+    public function getJsonRequisicoes()
+    {
+        if ($_SESSION["IMPRESSORA_NOME"]) {
+            $rs = $this->getCurl("http://" . $_SESSION["SERVER_MASTER"] . $this->_path . "terminal_cliente/getRequisicoes.php?impressora_nome=" . $_SESSION["IMPRESSORA_NOME"] . "&senha=senha1313");
+            return $rs;
+        }
+
+    }
+
+    public function requisicaoUpdateStatus($id,$novoStatus)
+    {
+            $rs = $this->getCurl("http://" . $_SESSION["SERVER_MASTER"] . $this->_path . "terminal_cliente/requisicaoUpdateStatus.php?id=" . $id . "&status=" . $novoStatus . "&senha=senha1313");
+            return $rs;
+    }
 
     public function getCurl($url)
     {

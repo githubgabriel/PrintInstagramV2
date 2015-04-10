@@ -113,9 +113,9 @@ function impressoraUpdateStatus() {
         type: 'get',
         url: 'ajax.php',
         async: false,
-        data: "acao=impressoraUpdateStatus",
+        data: "acao=impressoraUpdateStatus_and_JsonRequisicoes",
         success: function (retorno) {
-            console.log("Call Ajax: impressoraUpdateStatus >> retorno: " + retorno);
+            console.log("Call Ajax: impressoraUpdateStatus_and_JsonRequisicoes >> retorno: " + retorno);
         }
     });
 }
